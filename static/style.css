@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-:root{
-  --color1:#77a1d3;
-  --color2:#78cbca;
-  --color3:#e684ae;
-}
+
 * {
   margin: 0;
   padding: 0;
@@ -134,8 +130,8 @@ form.sign-in-form {
 .social-icon:hover {
   /* color: #4481eb;
   border-color: #4481eb; */
-  background: -webkit-radial-gradient(53% 100% circle, var(--color2) 0%,var(--color3) 100%);
-  background: radial-gradient(circle at 53% 100%, var(--color2) 0%,var(--color3) 100%);
+  background: -webkit-radial-gradient(53% 100% circle, #F96CFF 0%,#556DC8 100%);
+  background: radial-gradient(circle at 53% 100%, #F96CFF 0%,#556DC8 100%);
   /* -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
   border-color: white;
@@ -146,7 +142,9 @@ form.sign-in-form {
 .btn {
   width: 150px;
   /* background-color: #5995fd; */
-  background-image: linear-gradient(to right,var(--color2) 0%,var(--color3)51%);
+  /* background-image: linear-gradient(to right, #556DC8 0%,#F96CFF 60%); */
+  background-image: linear-gradient(to right, #F96CFF 0%, #556DC8 60%);
+
   background-size:200%  auto;
   border: none;
   outline: none;
@@ -162,7 +160,7 @@ form.sign-in-form {
 
 .btn:hover {
   /* background-position: right center; */
-  background-image: linear-gradient(to left,var(--color2) 51%,var(--color3));
+  background-image: linear-gradient(to left, #F96CFF 51%, #556DC8);
 
 }
 .panels-container {
@@ -183,7 +181,15 @@ form.sign-in-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg,var(--color1),var(--color3)40%);
+  /* background-image: linear-gradient(-45deg,#FBC2EB 0%,#A6C1EE 100%); */
+  background-image: url("wallpaperflare.com_wallpaper (2).jpg");
+  
+  /* background-repeat: no-repeat; */
+    background-attachment: fixed;
+    /* background-position-y: 105px; */
+    /* background-size: 110%; */
+    /* background-position-x: 20px; */
+     background-position-y: 700px; 
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
@@ -207,7 +213,6 @@ form.sign-in-form {
 .left-panel {
   pointer-events: all;
   padding: 3rem 17% 2rem 12%;
-
 }
 
 .right-panel {
@@ -242,19 +247,45 @@ form.sign-in-form {
   font-size: 0.8rem;
 }
 
-/* .right-panel .image, */
+.right-panel .image,
 .right-panel .content {
   transform: translateX(800px);
 }
 
 /* ANIMATION */
 
+.warning-msg{
+  opacity: 100;
+  color: red;
+  animation: fade 5000ms forwards;
+}
+
+.show{
+  display: block;
+}
+
+.hidden{
+  display: none;
+}
+
+@keyframes fade {
+  0%{
+      opacity: 100;
+  }
+  50%{
+      opacity: 50;
+  }
+  100%{
+      opacity: 0;
+  }
+}
+
 .container.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;
 }
 
-/* .container.sign-up-mode .left-panel .image, */
+.container.sign-up-mode .left-panel .image,
 .container.sign-up-mode .left-panel .content {
   transform: translateX(-800px);
 }
@@ -273,7 +304,7 @@ form.sign-in-form {
   z-index: 1;
 }
 
-/* .container.sign-up-mode .right-panel .image, */
+.container.sign-up-mode .right-panel .image,
 .container.sign-up-mode .right-panel .content {
   transform: translateX(0%);
 }
@@ -365,7 +396,7 @@ form.sign-in-form {
   .container.sign-up-mode:before {
     transform: translate(-50%, 100%);
     bottom: 32%;
-    right: initial;
+    /* right: initial; */
   }
 
   .container.sign-up-mode .left-panel .image,
